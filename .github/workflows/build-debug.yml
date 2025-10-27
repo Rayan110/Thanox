@@ -16,7 +16,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: gradle :thanox-app:assembleDebug
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
