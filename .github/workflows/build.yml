@@ -16,7 +16,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build Release APK
-        run: gradle :thanox-app:assembleRelease
+        run: cd thanox-app && gradle assembleRelease
 
       - name: Upload Release APK
         uses: actions/upload-artifact@v4
