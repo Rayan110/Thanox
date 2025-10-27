@@ -15,11 +15,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Build with Gradle
-        run: gradle assembleDebug
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v3
-        with:
-          name: thanox-apk
-          path: thanox-app/build/outputs/apk/debug/*.apk
+      -  name: Upload APK
+  uses: actions/upload-artifact@v4
+  with:
+    name: thanox-apk
+    path: thanox-app/build/outputs/apk/debug/*.apk
