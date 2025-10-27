@@ -1,4 +1,4 @@
-name: Build Thanox
+name: Build Thanox Debug
 
 on:
   workflow_dispatch:
@@ -15,8 +15,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      -  name: Upload APK
-  uses: actions/upload-artifact@v4
-  with:
-    name: thanox-apk
-    path: thanox-app/build/outputs/apk/debug/*.apk
+      - name: Build Debug APK
+        run: gradle :thanox-app:assembleDebug
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: thanox-debug-apk
+          path: thanox-app/build/outputs/apk/debug/*.apk
